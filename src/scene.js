@@ -1,4 +1,5 @@
 import {COURSE,COLORS,waveAt,clamp} from './core.js';
+import {loadRiderModels} from './rider-model.js?v=1.1.0';
 const B=window.BABYLON;
 const vertex=`precision highp float;
 attribute vec3 position; uniform mat4 world; uniform mat4 worldViewProjection;
@@ -151,52 +152,23 @@ export class OceanView {
     const normals=[];B.VertexData.ComputeNormals(positions,indices,normals);const vd=new B.VertexData();vd.positions=positions;vd.indices=indices;vd.normals=normals;
     const mesh=new B.Mesh(name,this.scene);vd.applyToMesh(mesh);mesh.material=mat;mesh.parent=parent;return mesh;
   }
+  async loadAssets(){this.riderAsset=await loadRiderModels(this.scene,this.riders,COLORS);return this.riderAsset;}
   rider(r){
-    const root=new B.TransformNode('racer-'+r.id,this.scene);const color=this.mat(COLORS[r.id]);const skin=this.mat(['#bb865e','#dcad85','#946447','#ca9371','#e3bb93'][r.id]);const dark=this.mat('#18373e');const white=this.mat('#f2f3db');
+    const root=new B.TransformNode('racer-'+r.id,this.scene);const color=this.mat(COLORS[r.id]);const dark=this.mat('#18373e');const white=this.mat('#f2f3db');
     this.hull('board-rail',color,root);const deck=this.hull('deck',white,root,.86,.045);deck.scaling.y=.7;deck.position.y=.13;
     this.box('deck-pad',[.51,.035,1.52],[0,.26,-.45],dark,root);
     this.box('nose-stripe',[.09,.025,1.35],[0,.33,1],color,root);
     this.textPlane('board-number',String(r.id+1).padStart(2,'0'),.39,.095,root,[0,.29,.45],'#f2f3db','#163a42').rotation.x=Math.PI/2;
-    const hips=this.ellipsoid('shorts',[.48,.42,.30],[0,1,-.35],dark,root);
-    const torso=this.ellipsoid('jersey',[.56,.68,.34],[0,1.43,-.2],color,root);
-    const head=this.ellipsoid('head',[.31,.38,.3],[0,1.94,-.12],skin,root,12);
-    const cap=this.ellipsoid('cap',[.33,.12,.34],[0,2.1,-.1],white,root,10);
-    const visor=this.box('visor',[.33,.04,.20],[0,2.07,.10],white,root);
-    const limbs={};for(const n of ['leftThigh','rightThigh','leftShin','rightShin','leftUpper','rightUpper','leftFore','rightFore']){
-      const mesh=this.tube(n,1,n.includes('Thigh')?.15:.095,[0,0,0],skin,root);mesh.rotationQuaternion=B.Quaternion.Identity();limbs[n]=mesh;
-    }
-    for(const side of [-1,1])this.ellipsoid('foot',[.14,.10,.30],[side*.19,.31,-.36],skin,root);
-    const shaft=this.tube('paddle-shaft',1,.033,[0,0,0],dark,root);shaft.rotationQuaternion=B.Quaternion.Identity();
-    const blade=this.ellipsoid('paddle-blade',[.19,.40,.045],[0,0,0],dark,root,8);blade.rotationQuaternion=B.Quaternion.Identity();
+    // The athlete and paddle come from the original Blender GLB; boards stay procedural.
     const foam=this.mat('#e3fffa','wake-foam',.26);foam.emissiveColor=new B.Color3(.10,.20,.2);
     const wakes=[];for(let i=0;i<4;i++){const m=B.MeshBuilder.CreateTorus('wake',{diameter:1,thickness:.033,tessellation:20},this.scene);m.material=foam;m.parent=root;wakes.push(m);}
-    return {root,hips,torso,head,cap,visor,limbs,shaft,blade,wakes};
-  }
-  limb(mesh,a,b){
-    const av=new B.Vector3(...a),bv=new B.Vector3(...b),d=bv.subtract(av),len=d.length();
-    mesh.position.copyFrom(av.add(bv).scale(.5));mesh.scaling.y=len;
-    B.Quaternion.FromUnitVectorsToRef(B.Axis.Y,d.scale(1/Math.max(len,.001)),mesh.rotationQuaternion);
+    return {root,wakes,model:null};
   }
   animateRider(actor,r,t){
     const rough=this.race.roughness,y=waveAt(r.x,r.z,t,rough);
     actor.root.position.set(r.x,y+.035,r.z);actor.root.rotation.set(.024*Math.sin(t*1.4+r.z*.1)*rough,r.heading,.032*Math.sin(t*1.7+r.x)*rough);
-    const elapsed=this.race.time-r.lastStroke,active=this.race.state==='racing'&&elapsed<.86;
-    const phase=clamp(elapsed/.86,0,1);const lean=active?.12+.32*Math.sin(phase*Math.PI):.09;
-    const shoulderZ=-.26+lean,shoulderY=1.56-lean*.22;
-    actor.torso.position.set(0,1.40-lean*.15,-.25+lean*.5);actor.torso.rotation.x=lean;
-    actor.head.position.set(0,1.91-lean*.28,-.2+lean);actor.cap.position.copyFrom(actor.head.position).addInPlace(new B.Vector3(0,.16,.005));actor.visor.position.copyFrom(actor.head.position).addInPlace(new B.Vector3(0,.13,.19));
-    for(const side of [-1,1]){const prefix=side<0?'left':'right';const hip=[side*.16,1.04,-.36],knee=[side*.19,.66,-.19+lean*.16],foot=[side*.19,.32,-.36];this.limb(actor.limbs[prefix+'Thigh'],hip,knee);this.limb(actor.limbs[prefix+'Shin'],knee,foot);}
-    const side=r.lastSide;
-    const bladeZ=active?(phase<.64?1.28-phase*3.1:-.70+(phase-.64)*5.3):.52;
-    const bladeY=active?(phase<.64?-.17:.35+Math.sin((phase-.64)/.36*Math.PI)*.3):.40;
-    const bottom=[side*.72,bladeY,bladeZ];const top=[-side*.15,1.96-lean*.12,.2+lean];
-    this.limb(actor.shaft,bottom,top);actor.blade.position.set(...bottom);actor.blade.rotationQuaternion.copyFrom(actor.shaft.rotationQuaternion);
-    const lower=bottom.map((v,i)=>v*.52+top[i]*.48);
-    for(const armSide of [-1,1]){
-      const prefix=armSide<0?'left':'right',hand=armSide===side?lower:top;
-      const shoulder=[armSide*.25,shoulderY,shoulderZ];const elbow=shoulder.map((v,i)=>(v+hand[i])*.5);elbow[0]+=armSide*.12;elbow[2]-=.14;
-      this.limb(actor.limbs[prefix+'Upper'],shoulder,elbow);this.limb(actor.limbs[prefix+'Fore'],elbow,hand);
-    }
+    const elapsed=this.race.time-r.lastStroke,active=this.race.state==='racing'&&elapsed>=0&&elapsed<.86;
+    actor.model?.update(active,clamp(elapsed/.86,0,1),r.lastSide,t);
     actor.wakes.forEach((w,i)=>{const cycle=(t*1.5+i*.25)%1;w.position.set(0,.015-y*.08,-1.6-cycle*(2+r.speed*.55));w.scaling.set(.6+cycle*1.9,.17,.9+cycle*3);w.visibility=clamp(r.speed/5,0,1)*(1-cycle)*.72;});
   }
   render(dt){
@@ -214,7 +186,7 @@ export class OceanView {
     this.lastCamera=this.lastCamera?B.Vector3.Lerp(this.lastCamera,target,smooth):target;this.camera.setTarget(this.lastCamera);
     this.scene.render();this.frames++;
   }
-  diagnostics(){return {renderer:'Babylon.js '+B.Engine.Version,webGL:this.engine.webGLVersion,frames:this.frames,fps:this.engine.getFps(),meshes:this.scene.meshes.length,activeMeshes:this.scene.getActiveMeshes().length,width:this.engine.getRenderWidth(),height:this.engine.getRenderHeight(),waterReady:this.oceanMat.isReady(this.ocean),skyReady:this.skyMat.isReady(this.sky),drawCalls:this.engine._drawCalls?.current||0};}
+  diagnostics(){return {riderAsset:this.riderAsset||null,renderer:'Babylon.js '+B.Engine.Version,webGL:this.engine.webGLVersion,frames:this.frames,fps:this.engine.getFps(),meshes:this.scene.meshes.length,activeMeshes:this.scene.getActiveMeshes().length,width:this.engine.getRenderWidth(),height:this.engine.getRenderHeight(),waterReady:this.oceanMat.isReady(this.ocean),skyReady:this.skyMat.isReady(this.sky),drawCalls:this.engine._drawCalls?.current||0};}
   capture(){this.scene.render();return this.canvas.toDataURL('image/png');}
   dispose(){window.removeEventListener('resize',this.resize);this.scene.dispose();this.engine.dispose();}
 }

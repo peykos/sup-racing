@@ -1,0 +1,36 @@
+
+> tide-sup-racing@1.1.0 test
+> node --test tests/*.test.js
+
+✔ five racers, six ordered checkpoints and deterministic configuration (19.848539ms)
+✔ settings reject invalid values (0.826539ms)
+✔ countdown prevents paddling and then begins racing (3.955385ms)
+✔ individual paddle impulse, cooldown and finite speed (5.449539ms)
+✔ rapid spam does not receive perfect rhythm bonus (2.202077ms)
+✔ automatic alternating strokes move the player without energy underflow (29.125154ms)
+✔ left and right steering produce opposite headings (5.362154ms)
+✔ pausing freezes clock, race timer, position and countdown (2.129846ms)
+✔ later checkpoints cannot be taken out of order (1.203693ms)
+✔ checkpoints advance once and finish requires all laps (2.404538ms)
+✔ coasting loses speed and sprint depletes energy (95.062539ms)
+✔ drafting is detected behind a racer, not in front (0.937923ms)
+✔ buoy collision slows but never generates NaN at exact center (1.008231ms)
+✔ boundary guard keeps the race inside the water domain (0.800077ms)
+✔ restart clears every result, stroke, checkpoint and input-independent state (13.531615ms)
+✔ invalid deltas cannot corrupt simulation (1.347385ms)
+✔ AI completes the entire course at every difficulty without teleporting (267.778846ms)
+✔ complete two-lap races are drivable using the same steering/paddle inputs, on both seas (294.896077ms)
+✔ ranking prioritizes completed checkpoints and then target distance (0.663ms)
+✔ time formatting and wave function are bounded and repeatable (1.148308ms)
+BJS - [07:07:16]: Babylon.js v9.14.0 - Null engine
+GLB_RUNTIME_OK {"instances":5,"clips":["Idle","Paddle_Left","Paddle_Right"],"bytes":621684,"leftBlade":[-0.7200000286102295,-0.17000000178813934,0.04000002145767212],"rightBlade":[0.7200000286102295,-0.17000000178813934,0.04000002145767212]}
+✔ Blender GLB is self-contained and within mobile geometry budget (10.951077ms)
+✔ Real Babylon GLB import, independent instances, team colours, stroke sides and sampling (3028.304693ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4993.071308

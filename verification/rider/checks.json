@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-10-02T04:07:04.724Z",
+  "classification": "FORMAL_QA_VERIFIED_CPU_AND_ASSET_ONLY",
+  "checks": [
+    {
+      "name": "sup-racer permanent tests",
+      "passed": 22,
+      "failed": 0,
+      "exitCode": 0
+    },
+    {
+      "name": "sup-racing-public permanent tests",
+      "passed": 22,
+      "failed": 0,
+      "exitCode": 0
+    },
+    {
+      "name": "unchanged race physics and public QA disabled",
+      "pass": true
+    },
+    {
+      "name": "Khronos glTF Validator",
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 0,
+      "numHints": 0,
+      "messages": [],
+      "truncated": false
+    },
+    {
+      "name": "local HTTP served bytes match checked source and assets",
+      "pass": true
+    }
+  ],
+  "files": [
+    {
+      "path": "src/scene.js",
+      "bytes": 17323,
+      "sha256": "ca9faba1379958bcd3263291c5638120b8569787b80363ec9e13ff17e3e3d203"
+    },
+    {
+      "path": "src/rider-model.js",
+      "bytes": 3066,
+      "sha256": "61b06c11100352a7c9055f28cd68e10440e23d5b20e213be3e2642907cda3348"
+    },
+    {
+      "path": "assets/rider/sup-rider.glb",
+      "bytes": 621684,
+      "sha256": "2a4a42025fcb5006984550e86db75b2bae591c7a6df265e3c237c0386bec1786"
+    },
+    {
+      "path": "assets/rider/sup-rider.blend",
+      "bytes": 3047756,
+      "sha256": "53625996b6f66e2d328b3ed4d1d4bca1eadb9103d2d8f2ed6d66e7b87e53988b"
+    },
+    {
+      "path": "assets/rider/sup-rider-preview.png",
+      "bytes": 953846,
+      "sha256": "3ab9562a72628cc1d9d244e5b7fec8bc4e34c5d72f12ba3811dc12d1b129cbcb"
+    },
+    {
+      "path": "assets/rider/manifest.json",
+      "bytes": 553,
+      "sha256": "1bdf33e4c28a905bd5adb1f64603c0ff010e1bde4c3a4079da9f9e0b59687d67"
+    },
+    {
+      "path": "art/blender/create_rider.py",
+      "bytes": 20109,
+      "sha256": "4737efa29546cec7140db2986fc7f5c3416f1fb0b7fd2460db13d2cac2955178"
+    },
+    {
+      "path": "vendor/babylonjs.loaders.min.js",
+      "bytes": 582015,
+      "sha256": "9314a54428754bc8cdd57fd5a722456f79cddf5779466fec48ef46ce12af0d59"
+    },
+    {
+      "path": "tests/rider.test.js",
+      "bytes": 4633,
+      "sha256": "ceac1d9fdd4f4351ce0f85d19a624dd921a808619351892a837d003363956f37"
+    }
+  ],
+  "browser": {
+    "status": "NOT_VERIFIED",
+    "reason": "Android intent produced no QA report; Debian Chromium exited with SIGTRAP. NullEngine checks do not prove WebGL rendering or mobile frame rate."
+  }
+}

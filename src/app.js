@@ -1,5 +1,5 @@
 import {Race,COURSE,COLORS,clamp,angleDiff,distance,formatTime} from './core.js';
-import {OceanView} from './scene.js';
+import {OceanView} from './scene.js?v=1.1.0';
 const $=id=>document.getElementById(id);
 const qa=false; // Public static build: local QA uploader is intentionally disabled.
 const race=new Race();let view;
@@ -98,6 +98,7 @@ function syncUI(){
 async function boot(){
   try{
     $('status').textContent='Κατασκευή ακτογραμμής…';view=new OceanView($('ocean'),race,{qa});
+    $('status').textContent='Φόρτωση κωπηλάτη από Blender…';await view.loadAssets();
     let previous=performance.now();
     view.engine.runRenderLoop(()=>{
       const now=performance.now(),dt=Math.min((now-previous)/1000,.15);previous=now;
