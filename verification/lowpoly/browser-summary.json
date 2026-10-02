@@ -1,0 +1,638 @@
+{
+  "name": "v2-summary",
+  "url": "http://127.0.0.1:8765/?qa=run&build=lowpoly-release",
+  "timestamp": "2026-10-02T06:21:41.984Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "Real WebGL and water shader render",
+      "pass": true,
+      "detail": {
+        "renderer": "Babylon.js 9.14.0",
+        "version": "2.0.0",
+        "webGL": 2,
+        "frames": 78,
+        "fps": 60,
+        "meshes": 313,
+        "activeMeshes": 34,
+        "width": 1023,
+        "height": 380,
+        "waterReady": true,
+        "characters": [
+          "leo",
+          "maya",
+          "noa"
+        ],
+        "selected": "leo",
+        "instances": 5,
+        "clips": [
+          "Idle",
+          "Paddle_Left",
+          "Paddle_Right",
+          "Celebrate"
+        ],
+        "prefabs": 15,
+        "quality": "high"
+      }
+    },
+    {
+      "name": "Ready menu and five GLB racers",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Select leo",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Select maya",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Select noa",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Start countdown via UI",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Countdown advances in animation loop",
+      "pass": true,
+      "detail": {
+        "state": "racing",
+        "countdown": -0.0005000000000014021
+      }
+    },
+    {
+      "name": "Keyboard auto paddles move the board",
+      "pass": true,
+      "detail": {
+        "before": {
+          "z": -88,
+          "strokes": 0,
+          "frames": 284
+        },
+        "after": {
+          "state": "racing",
+          "time": 2.1493999999999978,
+          "lap": 1,
+          "place": 1,
+          "options": {
+            "laps": 1,
+            "difficulty": "race",
+            "sea": "calm"
+          },
+          "countdown": -0.0005000000000014021,
+          "strokes": 3,
+          "perfect": 0,
+          "progress": 0,
+          "player": {
+            "id": 0,
+            "name": "ΕΣΥ",
+            "x": -0.013211297218794228,
+            "z": -85.14555780812559,
+            "heading": -0.011,
+            "speed": 2.741806116969758,
+            "energy": 98.20499999999998,
+            "passed": 0,
+            "next": 0,
+            "finishedAt": null,
+            "lastStroke": 2.048699999999998,
+            "lastSide": 1,
+            "strokeCount": 3,
+            "quality": "steady",
+            "draft": false,
+            "boosting": false,
+            "hitUntil": 0,
+            "nextAIStroke": 0.25,
+            "collisionUntil": 0
+          },
+          "racers": [
+            {
+              "id": 0,
+              "name": "ΕΣΥ",
+              "x": -0.013211297218794228,
+              "z": -85.14555780812559,
+              "heading": -0.011,
+              "speed": 2.741806116969758,
+              "energy": 98.20499999999998,
+              "passed": 0,
+              "next": 0,
+              "finishedAt": null,
+              "lastStroke": 2.048699999999998,
+              "lastSide": 1,
+              "strokeCount": 3,
+              "quality": "steady",
+              "draft": false,
+              "boosting": false,
+              "hitUntil": 0,
+              "nextAIStroke": 0.25,
+              "collisionUntil": 0
+            },
+            {
+              "id": 1,
+              "name": "NOVA",
+              "x": -4.911310340250988,
+              "z": -86.47104516648945,
+              "heading": 0.04406677963601903,
+              "speed": 1.7877768348768204,
+              "energy": 100,
+              "passed": 0,
+              "next": 0,
+              "finishedAt": null,
+              "lastStroke": 1.5447999999999966,
+              "lastSide": 1,
+              "strokeCount": 2,
+              "quality": "steady",
+              "draft": false,
+              "boosting": false,
+              "hitUntil": 0,
+              "nextAIStroke": 2.689581753808038,
+              "collisionUntil": 0
+            },
+            {
+              "id": 2,
+              "name": "KAI",
+              "x": 4.922471552543902,
+              "z": -87.5568287663974,
+              "heading": -0.04206144296653192,
+              "speed": 1.8334265364421947,
+              "energy": 100,
+              "passed": 0,
+              "next": 0,
+              "finishedAt": null,
+              "lastStroke": 1.7462999999999964,
+              "lastSide": -1,
+              "strokeCount": 2,
+              "quality": "steady",
+              "draft": false,
+              "boosting": false,
+              "hitUntil": 0,
+              "nextAIStroke": 2.915341032181309,
+              "collisionUntil": 0
+            },
+            {
+              "id": 3,
+              "name": "LUNA",
+              "x": -9.868161771159711,
+              "z": -88.60689268119985,
+              "heading": 0.085821342716539,
+              "speed": 1.8736842965126561,
+              "energy": 99.01139999999997,
+              "passed": 0,
+              "next": 0,
+              "finishedAt": null,
+              "lastStroke": 1.9142999999999961,
+              "lastSide": 1,
+              "strokeCount": 2,
+              "quality": "steady",
+              "draft": false,
+              "boosting": false,
+              "hitUntil": 0,
+              "nextAIStroke": 3.0877998782748017,
+              "collisionUntil": 0
+            },
+            {
+              "id": 4,
+              "name": "RIO",
+              "x": 9.889838529077018,
+              "z": -89.6592173754488,
+              "heading": -0.08262622114999203,
+              "speed": 1.9150519781420745,
+              "energy": 98.00339999999998,
+              "passed": 0,
+              "next": 0,
+              "finishedAt": null,
+              "lastStroke": 2.082299999999997,
+              "lastSide": -1,
+              "strokeCount": 2,
+              "quality": "steady",
+              "draft": false,
+              "boosting": false,
+              "hitUntil": 0,
+              "nextAIStroke": 3.2931348912994682,
+              "collisionUntil": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Real frames continue rendering",
+      "pass": true,
+      "detail": {
+        "deltaFrames": 105
+      }
+    },
+    {
+      "name": "Steering key changes heading",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Pointer hold repeats paddles and releases",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Pause stops simulation and shows dialog",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Resume works",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Wide camera toggles",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Full one-lap race via normal steering and paddling inputs",
+      "pass": true,
+      "detail": {
+        "loops": 5478,
+        "finish": 95.78149999999587
+      }
+    },
+    {
+      "name": "Results and ranking displayed",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Replay resets state",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "portrait menu fits",
+      "pass": true,
+      "detail": {
+        "rects": [
+          {
+            "id": "startBtn",
+            "x": 22,
+            "y": 700.7111206054688,
+            "w": 346.0444641113281,
+            "h": 46,
+            "right": 368.0444641113281,
+            "bottom": 746.7111206054688
+          },
+          {
+            "id": "laps",
+            "x": 23,
+            "y": 586.4666748046875,
+            "w": 97.17778015136719,
+            "h": 32,
+            "right": 120.17778015136719,
+            "bottom": 618.4666748046875
+          },
+          {
+            "id": "difficulty",
+            "x": 135.1777801513672,
+            "y": 586.4666748046875,
+            "w": 114.56666564941406,
+            "h": 32,
+            "right": 249.74444580078125,
+            "bottom": 618.4666748046875
+          },
+          {
+            "id": "sea",
+            "x": 264.74444580078125,
+            "y": 586.4666748046875,
+            "w": 102.30000305175781,
+            "h": 32,
+            "right": 367.04444885253906,
+            "bottom": 618.4666748046875
+          }
+        ]
+      }
+    },
+    {
+      "name": "portrait touch controls fit without overlaps",
+      "pass": true,
+      "detail": {
+        "rects": [
+          {
+            "id": "leftBtn",
+            "x": 16,
+            "y": 707.0889282226562,
+            "w": 44,
+            "h": 52,
+            "right": 60,
+            "bottom": 759.0889282226562
+          },
+          {
+            "id": "rightBtn",
+            "x": 66,
+            "y": 707.0889282226562,
+            "w": 44,
+            "h": 52,
+            "right": 110,
+            "bottom": 759.0889282226562
+          },
+          {
+            "id": "paddleLeft",
+            "x": 252.04444885253906,
+            "y": 690.0889282226562,
+            "w": 58,
+            "h": 69,
+            "right": 310.04444885253906,
+            "bottom": 759.0889282226562
+          },
+          {
+            "id": "paddleRight",
+            "x": 316.0444641113281,
+            "y": 690.0889282226562,
+            "w": 58,
+            "h": 69,
+            "right": 374.0444641113281,
+            "bottom": 759.0889282226562
+          },
+          {
+            "id": "sprintBtn",
+            "x": 158.52223205566406,
+            "y": 677.0889282226562,
+            "w": 45,
+            "h": 48,
+            "right": 203.52223205566406,
+            "bottom": 725.0889282226562
+          }
+        ]
+      }
+    },
+    {
+      "name": "portrait ECO mode works",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "portrait no runtime errors",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "landscape menu fits",
+      "pass": true,
+      "detail": {
+        "rects": [
+          {
+            "id": "startBtn",
+            "x": 40.71111297607422,
+            "y": 270.70001220703125,
+            "w": 284.5777893066406,
+            "h": 41.42222213745117,
+            "right": 325.28890228271484,
+            "bottom": 312.1222343444824
+          },
+          {
+            "id": "laps",
+            "x": 40.71111297607422,
+            "y": 227.70001220703125,
+            "w": 82.4888916015625,
+            "h": 29,
+            "right": 123.20000457763672,
+            "bottom": 256.70001220703125
+          },
+          {
+            "id": "difficulty",
+            "x": 132.1999969482422,
+            "y": 227.70001220703125,
+            "w": 97.25555419921875,
+            "h": 29,
+            "right": 229.45555114746094,
+            "bottom": 256.70001220703125
+          },
+          {
+            "id": "sea",
+            "x": 238.45556640625,
+            "y": 227.70001220703125,
+            "w": 86.83333587646484,
+            "h": 29,
+            "right": 325.28890228271484,
+            "bottom": 256.70001220703125
+          }
+        ]
+      }
+    },
+    {
+      "name": "landscape touch controls fit without overlaps",
+      "pass": true,
+      "detail": {
+        "rects": [
+          {
+            "id": "leftBtn",
+            "x": 20,
+            "y": 331.0444641113281,
+            "w": 49,
+            "h": 46,
+            "right": 69,
+            "bottom": 377.0444641113281
+          },
+          {
+            "id": "rightBtn",
+            "x": 78,
+            "y": 331.0444641113281,
+            "w": 49,
+            "h": 46,
+            "right": 127,
+            "bottom": 377.0444641113281
+          },
+          {
+            "id": "paddleLeft",
+            "x": 695.0889282226562,
+            "y": 320.0444641113281,
+            "w": 60,
+            "h": 57,
+            "right": 755.0889282226562,
+            "bottom": 377.0444641113281
+          },
+          {
+            "id": "paddleRight",
+            "x": 764.0889282226562,
+            "y": 320.0444641113281,
+            "w": 60,
+            "h": 57,
+            "right": 824.0889282226562,
+            "bottom": 377.0444641113281
+          },
+          {
+            "id": "sprintBtn",
+            "x": 352.6388854980469,
+            "y": 347.0444641113281,
+            "w": 76,
+            "h": 30,
+            "right": 428.6388854980469,
+            "bottom": 377.0444641113281
+          }
+        ]
+      }
+    },
+    {
+      "name": "landscape ECO mode works",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "landscape no runtime errors",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "desktop menu fits",
+      "pass": true,
+      "detail": {
+        "rects": [
+          {
+            "id": "startBtn",
+            "x": 72.71111297607422,
+            "y": 614.933349609375,
+            "w": 300.5777893066406,
+            "h": 50,
+            "right": 373.28890228271484,
+            "bottom": 664.933349609375
+          },
+          {
+            "id": "laps",
+            "x": 72.71111297607422,
+            "y": 552.933349609375,
+            "w": 87.43888854980469,
+            "h": 38,
+            "right": 160.1500015258789,
+            "bottom": 590.933349609375
+          },
+          {
+            "id": "difficulty",
+            "x": 169.15000915527344,
+            "y": 552.933349609375,
+            "w": 103.0888900756836,
+            "h": 38,
+            "right": 272.23889923095703,
+            "bottom": 590.933349609375
+          },
+          {
+            "id": "sea",
+            "x": 281.2388916015625,
+            "y": 552.933349609375,
+            "w": 92.05000305175781,
+            "h": 38,
+            "right": 373.2888946533203,
+            "bottom": 590.933349609375
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop touch controls fit without overlaps",
+      "pass": true,
+      "detail": {
+        "rects": [
+          {
+            "id": "leftBtn",
+            "x": 36,
+            "y": 706,
+            "w": 65,
+            "h": 59,
+            "right": 101,
+            "bottom": 765
+          },
+          {
+            "id": "rightBtn",
+            "x": 110,
+            "y": 706,
+            "w": 65,
+            "h": 59,
+            "right": 175,
+            "bottom": 765
+          },
+          {
+            "id": "paddleLeft",
+            "x": 1063,
+            "y": 693,
+            "w": 86,
+            "h": 72,
+            "right": 1149,
+            "bottom": 765
+          },
+          {
+            "id": "paddleRight",
+            "x": 1158,
+            "y": 693,
+            "w": 86,
+            "h": 72,
+            "right": 1244,
+            "bottom": 765
+          },
+          {
+            "id": "sprintBtn",
+            "x": 557.772216796875,
+            "y": 735,
+            "w": 90,
+            "h": 38,
+            "right": 647.772216796875,
+            "bottom": 773
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop ECO mode works",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "desktop no runtime errors",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    },
+    {
+      "name": "No JavaScript errors",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    }
+  ],
+  "info": {
+    "renderer": "Babylon.js 9.14.0",
+    "version": "2.0.0",
+    "webGL": 2,
+    "frames": 760,
+    "fps": 60,
+    "meshes": 313,
+    "activeMeshes": 0,
+    "width": 1023,
+    "height": 380,
+    "waterReady": true,
+    "characters": [
+      "leo",
+      "maya",
+      "noa"
+    ],
+    "selected": "leo",
+    "instances": 5,
+    "clips": [
+      "Idle",
+      "Paddle_Left",
+      "Paddle_Right",
+      "Celebrate"
+    ],
+    "prefabs": 15,
+    "quality": "high"
+  },
+  "errors": []
+}

@@ -1,0 +1,76 @@
+{
+  "title": "TIDE \u2014 Island Sprint",
+  "blender": "4.3.2",
+  "style": "Original flat-shaded, vertex-colour, texture-free low-poly",
+  "units": "metres",
+  "assets": [
+    {
+      "file": "rider-leo.glb",
+      "source": "rider-leo.blend",
+      "triangles": 1468,
+      "meshes": 18,
+      "bytes": 264120,
+      "animations": [
+        "Idle",
+        "Paddle_Left",
+        "Paddle_Right",
+        "Celebrate"
+      ],
+      "textures": 0
+    },
+    {
+      "file": "rider-maya.glb",
+      "source": "rider-maya.blend",
+      "triangles": 1356,
+      "meshes": 18,
+      "bytes": 256588,
+      "animations": [
+        "Idle",
+        "Paddle_Left",
+        "Paddle_Right",
+        "Celebrate"
+      ],
+      "textures": 0
+    },
+    {
+      "file": "rider-noa.glb",
+      "source": "rider-noa.blend",
+      "triangles": 1460,
+      "meshes": 18,
+      "bytes": 270896,
+      "animations": [
+        "Idle",
+        "Paddle_Left",
+        "Paddle_Right",
+        "Celebrate"
+      ],
+      "textures": 0
+    },
+    {
+      "file": "coastal-kit.glb",
+      "source": "coastal-kit.blend",
+      "triangles": 2534,
+      "meshes": 15,
+      "bytes": 209360,
+      "animations": [],
+      "textures": 0
+    }
+  ],
+  "prefabs": [
+    "Board_Coral",
+    "Board_Sun",
+    "Board_Teal",
+    "Island",
+    "Palm",
+    "Rock",
+    "House",
+    "Lighthouse",
+    "Pier",
+    "Umbrella",
+    "Buoy",
+    "Gate",
+    "Sailboat",
+    "Cloud",
+    "Gull"
+  ]
+}

@@ -1,0 +1,48 @@
+
+> tide-sup-racing@2.0.0 test
+> node --test tests/*.test.js
+
+✔ Shore contact remains finite even at exact island centre (11.946461ms)
+✔ Coastline guards preserve open water and paused simulation (1.811615ms)
+✔ Full two-lap course is drivable with all island guards: calm (336.551692ms)
+✔ Full two-lap course is drivable with all island guards: swell (276.337539ms)
+✔ five racers, six ordered checkpoints and deterministic configuration (20.938769ms)
+✔ settings reject invalid values (1.125769ms)
+✔ countdown prevents paddling and then begins racing (4.46ms)
+✔ individual paddle impulse, cooldown and finite speed (5.199385ms)
+✔ rapid spam does not receive perfect rhythm bonus (2.556231ms)
+✔ automatic alternating strokes move the player without energy underflow (32.200077ms)
+✔ left and right steering produce opposite headings (10.092308ms)
+✔ pausing freezes clock, race timer, position and countdown (2.019077ms)
+✔ later checkpoints cannot be taken out of order (5.607154ms)
+✔ checkpoints advance once and finish requires all laps (2.876077ms)
+✔ coasting loses speed and sprint depletes energy (94.912077ms)
+✔ drafting is detected behind a racer, not in front (1.132692ms)
+✔ buoy collision slows but never generates NaN at exact center (1.223076ms)
+✔ boundary guard keeps the race inside the water domain (0.884077ms)
+✔ restart clears every result, stroke, checkpoint and input-independent state (8.055385ms)
+✔ invalid deltas cannot corrupt simulation (1.219462ms)
+✔ AI completes the entire course at every difficulty without teleporting (314.778384ms)
+✔ complete two-lap races are drivable using the same steering/paddle inputs, on both seas (418.803462ms)
+✔ ranking prioritizes completed checkpoints and then target distance (0.752ms)
+✔ time formatting and wave function are bounded and repeatable (1.209154ms)
+BJS - [09:21:21]: Babylon.js v9.14.0 - Null engine
+LOWPOLY_WORLD_OK {"renderer":"Babylon.js 9.14.0","version":"2.0.0","webGL":1,"frames":6,"fps":60,"meshes":313,"activeMeshes":129,"width":1280,"height":800,"waterReady":true,"characters":["leo","maya","noa"],"selected":"leo","instances":5,"clips":["Idle","Paddle_Left","Paddle_Right","Celebrate"],"prefabs":15,"quality":"low"}
+✔ Low-poly GLB valid structure and mobile budget: rider-leo.glb (22.652692ms)
+✔ Low-poly GLB valid structure and mobile budget: rider-maya.glb (4.583923ms)
+✔ Low-poly GLB valid structure and mobile budget: rider-noa.glb (5.154231ms)
+✔ Low-poly GLB valid structure and mobile budget: coastal-kit.glb (2.256846ms)
+✔ Three characters are genuinely different geometries (5.749539ms)
+✔ Actual Babylon world imports, selects, independently samples and renders GLB scene (5071.431769ms)
+BJS - [09:21:27]: Babylon.js v9.14.0 - Null engine
+GLB_RUNTIME_OK {"instances":5,"clips":["Idle","Paddle_Left","Paddle_Right"],"bytes":621684,"leftBlade":[-0.7200000286102295,-0.17000000178813934,0.04000002145767212],"rightBlade":[0.7200000286102295,-0.17000000178813934,0.04000002145767212]}
+✔ Blender GLB is self-contained and within mobile geometry budget (16.094461ms)
+✔ Real Babylon GLB import, independent instances, team colours, stroke sides and sampling (4113.287462ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13808.90277

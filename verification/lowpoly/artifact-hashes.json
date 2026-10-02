@@ -1,0 +1,46 @@
+{
+  "index.html": {
+    "bytes": 16769,
+    "sha256": "cf7dd123c05f16fdc5f3b98d847e30899936d9ae5098fb5e5d2a385bf1d87330"
+  },
+  "v2/app.js": {
+    "bytes": 12712,
+    "sha256": "e136f72407e728a5172a1c861b6538d9896af7136dfc90cf3ad2ccfa5a1f8dc9"
+  },
+  "v2/world.js": {
+    "bytes": 15279,
+    "sha256": "789f16f9719c0177ccde807045afacc4626f3138a7c0c74b99625198a66ffde0"
+  },
+  "v2/coast.js": {
+    "bytes": 766,
+    "sha256": "96dcb597d566efc313c4290cb0b856e63de77bfe03f0fefcfb18ab46b9d51222"
+  },
+  "v2/ui.css": {
+    "bytes": 26211,
+    "sha256": "2c3ced49a95cecd24fd1607c2204cbc272cb71baa8318421ebae1a200f82beb1"
+  },
+  "v2/qa.js": {
+    "bytes": 6661,
+    "sha256": "478a21589d6f3ebd9290a98c00ccca849f420c61615c1318093d77206dc97c6c"
+  },
+  "src/core.js": {
+    "bytes": 8120,
+    "sha256": "624a3e8a3bad8da4cd0997d354eecc4eaef6445ad343f1e876b0e7ea779c340a"
+  },
+  "assets/lowpoly/rider-leo.glb": {
+    "bytes": 264120,
+    "sha256": "c8ec692f97f7de4c916e0fc2083c4bc9becd7c834a2c29a9d7d0de4f73d1f52b"
+  },
+  "assets/lowpoly/rider-maya.glb": {
+    "bytes": 256588,
+    "sha256": "0272058a82be471b1a05f4098b93501b2051d58e1f5e40f5df0596f406d45693"
+  },
+  "assets/lowpoly/rider-noa.glb": {
+    "bytes": 270896,
+    "sha256": "161e3f0f5d6e7bdcfb948a19a3006ebe253fe2eb970cda58fd5dc0b36f44c12d"
+  },
+  "assets/lowpoly/coastal-kit.glb": {
+    "bytes": 209360,
+    "sha256": "0af42a69b43215070f48fa3cbe6a93e9f1fa46eb15e10f0961d5507bb01cb3cb"
+  }
+}
